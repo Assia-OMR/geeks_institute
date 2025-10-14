@@ -1,0 +1,1 @@
+A default color is set; black color. So as long as the user opens the project he doesn't have to select a color necessarily.
