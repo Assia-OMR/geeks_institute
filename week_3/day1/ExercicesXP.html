@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercices XP</title>
+        
+    </head>
+    <body>
+        <script>
+            /*------Exercise 1------*/
+
+            // ==========================
+            // Part I - Review about arrays
+            // ==========================
+
+            const people = ["Greg", "Mary", "Devon", "James"];
+
+            // 1. Write code to remove "Greg" from the people array.
+            people.shift()
+            console.log("After removing Greg", people);
+
+            // 2. Write code to replace "James" to "Jason".
+            people.splice(people.indexOf("James"), 1, "Jason"); 
+            console.log("After replacing James with Jason:", people);
+
+            // 3. Write code to add your name to the end of the people array.
+            people.push("Assia");
+            console.log("After adding my name:", people);
+
+            // 4. Write code that console.logs Mary's index.
+            console.log("Mary's index:", people.indexOf("Mary"));
+
+            // 5. Write code to make a copy of the people array using the slice method.
+            // The copy should NOT include "Mary" or my name.
+            const peopleCopy = people.slice(1, 3);
+            console.log("Copy without Mary and my name:", peopleCopy);
+
+            // 6. Write code that gives the index of "Foo". 
+            console.log("Index of 'Foo':", people.indexOf("Foo"));
+            // Why does it return -1? 
+            /* It returns -1 because "Foo" is not found in the array. The indexOf() method returns -1 when the 
+            element is not present in the array.*/
+
+            // 7. Create a variable called last which value is the last element of the array.
+            const last = people[people.length - 1];
+            console.log("Last element:", last);
+
+            // ==========================
+            // Part II - Loops
+            // ==========================
+
+            // 8. Using a loop, iterate through the people array and console.log each person
+            console.log("Loop through all people:");
+            for (let i = 0; i < people.length; i++) {
+            console.log(people[i]);
+            }
+
+            // 9. Using a loop, iterate through the people array and exit after “Devon”
+            console.log("Loop that stops after Devon:");
+            for (let i = 0; i < people.length; i++) {
+            console.log(people[i]);
+            if (people[i] === "Devon") {
+                break; 
+            }}
+
+            /*------Exercise 2: Your favorite colors------*/
+
+            // 1. Create an array of your 5 favorite colors
+            const colors = ["blue", "red", "green", "purple", "black"];
+
+            // 2. Loop through the array and display each color with its rank
+            for (let i = 0; i < colors.length; i++) {
+                console.log(`My #${i + 1} choice is ${colors[i]}`);
+            };
+
+            // 🌟 Bonus: add correct suffix (st, nd, rd, th)
+            const suffixes = ["st", "nd", "rd", "th", "th"];
+            for (let i = 0; i < colors.length; i++) {
+                console.log(`My ${i + 1}${suffixes[i]} choice is ${colors[i]}`);
+
+            }; 
+
+            /*--------- Exercise 3 : Repeat the question -----------*/
+
+            let number = prompt("Enter a number:");
+
+            console.log(typeof number); 
+
+            number = Number(number);
+
+            while (number < 10) {
+                number = Number(prompt("Enter a number :"));
+            }
+
+            console.log("You entered:", number);
+
+            /*---------- Exercise 4 : Building Management -------------*/
+
+            const building = {
+            numberOfFloors: 4,
+            numberOfAptByFloor: {
+                firstFloor: 3,
+                secondFloor: 4,
+                thirdFloor: 9,
+                fourthFloor: 2,
+            },
+            nameOfTenants: ["Sarah", "Dan", "David"],
+            numberOfRoomsAndRent: {
+                sarah: [3, 990],
+                dan: [4, 1000],
+                david: [1, 500],
+            },
+            };
+
+            // 1. Console.log the number of floors in the building
+            console.log("Number of floors:", building.numberOfFloors);
+
+            // 2. Console.log how many apartments are on the floors 1 and 3
+            console.log("Apartments on floor 1:", building.numberOfAptByFloor.firstFloor);
+            console.log("Apartments on floor 3:", building.numberOfAptByFloor.thirdFloor);
+
+            // 3. Console.log the name of the second tenant and the number of rooms he has
+            console.log("Second tenant:", building.nameOfTenants[1], "Rooms:", building.numberOfRoomsAndRent.dan[0]);
+
+            // 4. Check if Sarah’s + David’s rent > Dan’s rent
+            const sarahRent = building.numberOfRoomsAndRent.sarah[1];
+            const davidRent = building.numberOfRoomsAndRent.david[1];
+            const danRent = building.numberOfRoomsAndRent.dan[1];
+
+            if (sarahRent + davidRent > danRent) {
+            building.numberOfRoomsAndRent.dan[1] = 1200;
+            }
+
+            console.log("Updated rents:", building.numberOfRoomsAndRent);
+
+            /*----------------- Exercise 5 : Family -------------------*/
+
+            // 1. Create an object called family
+            const family = {
+            father: "John",
+            mother: "Anna",
+            son: "Tom",
+            daughter: "Lisa"
+            };
+
+            // 2. Using a for...in loop, console.log the keys
+            console.log("Keys:");
+            for (let key in family) {
+            console.log(key);
+            }
+
+            // 3 Using a for...in loop, console.log the values
+            console.log("Values:");
+            for (let key in family) {
+            console.log(family[key]);
+            }
+
+            /*---------------- Exercise 6 : Rudolf ----------------*/
+
+            const details = {
+            my: 'name',
+            is: 'Rudolf',
+            the: 'reindeer'
+            };
+
+            let sentence = "";
+
+            for (let key in details) {
+            sentence += key + " " + details[key] + " ";
+            }
+
+            console.log(sentence.trim());
+
+            /*------------ Exercise 7 : Secret Group ------------------*/
+
+            const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+
+            let firstLetters = [];
+            for (let i = 0; i < names.length; i++) {
+            firstLetters.push(names[i][0]);
+            }
+
+            firstLetters.sort();
+
+            let secretName = firstLetters.join("");
+
+            console.log(secretName); 
+
+
+
+
+
+
+
+        </script>
+
+        
+    </body>
+</html>
