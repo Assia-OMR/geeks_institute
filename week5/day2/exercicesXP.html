@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercices XP</title>
+        
+    </head>
+    <body>
+        <script>
+            //__________________________________________//
+            /*------------- Exercice 1 ---------------*/
+            //__________________________________________//
+
+            /*
+
+            
+            const url = "https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+
+            fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("GIF Data:", data);
+            })
+            .catch(error => {
+                console.error("Fetch error:", error);
+            });
+*/
+            //__________________________________________//
+            /*------------- Exercice 2 ---------------*/
+            //__________________________________________//
+            /*
+            
+            
+
+            const url = "https://api.giphy.com/v1/gifs/search?api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My&q=sun&limit=10&offset=2&rating=g";
+
+            fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("GIF Data:", data);
+            })
+            .catch(error => {
+                console.error("Fetch error:", error);
+            });
+*/
+
+            //__________________________________________//
+            /*------------- Exercice 3 ---------------*/
+            //__________________________________________//
+
+            async function getStarship() {
+            try {
+                const response = await fetch("https://www.swapi.tech/api/starships/9/");
+
+                if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const objectStarWars = await response.json();
+
+                console.log(objectStarWars.result);
+
+            } catch (error) {
+                console.error("Fetch error:", error);
+            }
+            }
+
+            getStarship();
+
+
+            //__________________________________________//
+            /*------------- Exercice 4 ---------------*/
+            //__________________________________________//
+
+            //the outcome of the provided code will be:
+            calling
+            resolved
+            //with a 2-second delay between the two lines
+
+
+
+
+        </script>
+
+        
+    </body>
+</html>
