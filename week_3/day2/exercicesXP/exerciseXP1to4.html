@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercices XP</title>
+    </head>
+    <body>
+        <script>
+            //______________________________________________//
+            /* Exercice 1: Find the numbers divisible by 23 */
+            //______________________________________________//
+
+            function displayNumbersDivisible(divisor = 23) {
+            let sum = 0;
+            const divisibleNumbers = [];
+
+            for (let i = 0; i <= 500; i++) {
+                if (i % divisor === 0) {
+                divisibleNumbers.push(i);
+                sum += i;
+                }
+            }
+ 
+            console.log(divisibleNumbers.join(" "));
+            console.log("Sum:", sum);
+            }
+
+            displayNumbersDivisible();
+            displayNumbersDivisible(3);
+            displayNumbersDivisible(45);
+
+            //___________________________//
+            /* Exercice 2: Shopping List */
+            //___________________________//
+            const stock = {
+            banana: 6,
+            apple: 0,
+            pear: 12,
+            orange: 32,
+            blueberry: 1,
+            };
+
+            const prices = {
+            banana: 4,
+            apple: 2,
+            pear: 1,
+            orange: 1.5,
+            blueberry: 10,
+            };
+
+            const shoppingList = ["banana", "orange", "apple"];
+
+            function myBill() {
+            let total = 0;
+
+            for (let item of shoppingList) {
+                if (stock[item] > 0) {
+                total += prices[item];
+                stock[item]--;
+                }
+            }
+
+            return total;
+            }
+
+            console.log("Total bill:", myBill());
+            console.log("Updated stock:", stock);
+
+            //___________________________________//
+            /* Exercice 3: What’s in my wallet ? */
+            //___________________________________//
+
+            function changeEnough(itemPrice, amountOfChange) {
+            const [quarters, dimes, nickels, pennies] = amountOfChange;
+            const total =
+                quarters * 0.25 + dimes * 0.1 + nickels * 0.05 + pennies * 0.01;
+
+            return total >= itemPrice;
+            }
+
+            console.log(changeEnough(4.25, [25, 20, 5, 0]));
+            console.log(changeEnough(14.11, [2, 100, 0, 0]));
+            console.log(changeEnough(0.75, [0, 0, 20, 5]));
+
+            //______________________________//
+            /* Exercice 4: Vacations Costs */
+            //______________________________//
+
+            function hotelCost(nights) {
+            if (isNaN(nights) || nights <= 0) return "Invalid number of nights";
+            return nights * 140;
+            }
+
+            function planeRideCost(destination) {
+            if (typeof destination !== "string" || !destination) return "Invalid destination";
+
+            destination = destination.toLowerCase();
+            switch (destination) {
+                case "london":
+                return 183;
+                case "paris":
+                return 220;
+                default:
+                return 300;
+            }
+            }
+
+            function rentalCarCost(days) {
+            if (isNaN(days) || days <= 0) return "Invalid number of days";
+            let cost = days * 40;
+            if (days > 10) cost *= 0.95;
+            return cost;
+            }
+
+            function totalVacationCost(nights, destination, days) {
+            const hotel = hotelCost(nights);
+            const plane = planeRideCost(destination);
+            const car = rentalCarCost(days);
+
+            console.log(`Your car rent cost is: $${car}, your hotel nights cost is: $${hotel}, your plane ride cost is: $${plane}`);
+            return car + hotel + plane;
+            }
+
+            console.log("Which makes your total vacation cost:", totalVacationCost(5, "London", 12));
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
